@@ -73,5 +73,16 @@ public class AgedBrieTest {
 		
 		assertThat(agedBrie.quality).as("Quality").isEqualTo(50);
 	}
+	
+	@Test
+	public void thatQuantityCanNotBeNegative() {
+		agedBrie.quality = 0;
+		agedBrie.sellIn = 0;
+		
+		application.updateQuality();
+		
+		assertThat(agedBrie.quality).as("Quality").isEqualTo(2);
+		assertThat(agedBrie.sellIn).as("SellIn").isEqualTo(-1);
+	}	
 
 }

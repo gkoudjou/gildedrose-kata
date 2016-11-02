@@ -91,6 +91,17 @@ public class BackstageTest {
 		application.updateQuality();
 		
 		assertThat(backstage.quality).as("Quality").isEqualTo(50);
+	}
+	
+	@Test
+	public void thatQuantityCanNotBeNegative() {
+		backstage.quality = 2;
+		backstage.sellIn = 0;
+		
+		application.updateQuality();
+		
+		assertThat(backstage.quality).as("Quality").isEqualTo(0).as("We will normally obtain -1 (2 - 3) here but due to the rule, we expected 0 as result");
+		assertThat(backstage.sellIn).as("SellIn").isEqualTo(-1);
 	}	
 
 }

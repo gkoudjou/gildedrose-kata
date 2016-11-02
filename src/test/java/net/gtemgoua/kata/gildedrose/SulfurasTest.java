@@ -56,4 +56,15 @@ public class SulfurasTest {
 		assertThat(sulfuras.quality).as("Quality").isEqualTo(50);
 	}
 	
+	@Test
+	public void thatQuantityCanNotBeNegative() {
+		sulfuras.quality = 0;
+		sulfuras.sellIn = 0;
+		
+		application.updateQuality();
+		
+		assertThat(sulfuras.quality).as("Quality").isEqualTo(0);
+		assertThat(sulfuras.sellIn).as("SellIn").isEqualTo(0);
+	}	
+	
 }
