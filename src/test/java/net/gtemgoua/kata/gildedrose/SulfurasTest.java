@@ -18,7 +18,7 @@ public class SulfurasTest {
 	public void setUp() {
 		
 		//TODO : The original updateQuality doesn't force the sulfuras quality to 80 as expected !
-		sulfuras = new Item(GildedRose.SULFURAS_HAND_OF_RAGNAROS, 5, 10); 
+		sulfuras = new Item(Constants.SULFURAS_HAND_OF_RAGNAROS, 5, 10); 
 		items = new Item[] {
 				sulfuras
 		};

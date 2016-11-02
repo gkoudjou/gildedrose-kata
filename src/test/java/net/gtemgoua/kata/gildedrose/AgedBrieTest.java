@@ -16,7 +16,7 @@ public class AgedBrieTest {
 	
 	@Before
 	public void setUp() {
-		agedBrie = new Item(GildedRose.AGED_BRIE, 5, 10); 
+		agedBrie = new Item(Constants.AGED_BRIE, 5, 10); 
 		items = new Item[] {
 				agedBrie
 		};

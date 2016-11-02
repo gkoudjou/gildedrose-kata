@@ -15,7 +15,7 @@ public class BackstageTest {
 	
 	@Before
 	public void setUp() {
-		backstage = new Item(GildedRose.BACKSTAGE_PASSES_TO_A_TAFKAL80ETC_CONCERT, 5, 10); 
+		backstage = new Item(Constants.BACKSTAGE_PASSES_TO_A_TAFKAL80ETC_CONCERT, 5, 10); 
 		items = new Item[] {
 				backstage
 		};

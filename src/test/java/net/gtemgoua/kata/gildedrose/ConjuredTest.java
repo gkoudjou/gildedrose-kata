@@ -15,7 +15,7 @@ public class ConjuredTest {
 	
 	@Before
 	public void setUp() {
-		conjured = new Item(GildedRose.CONJURED, 5, 10); 
+		conjured = new Item(Constants.CONJURED, 5, 10); 
 		items = new Item[] {
 				conjured
 		};
