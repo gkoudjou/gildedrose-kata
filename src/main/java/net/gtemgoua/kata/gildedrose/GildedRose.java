@@ -25,12 +25,27 @@ class GildedRose {
         		applyBackStagesRules(items[i]);
         	}
         	else
-        		old_updateQuality(items[i]);
+        		applyNormalRules(items[i]);
         
         }
     }
     
-    private void applyBackStagesRules(Item item) {
+    private void applyNormalRules(Item item) {
+    	if(item.sellIn == 0)
+    		item.quality -= 2;
+    	else
+    		item.quality--;
+    	
+    	if( item.quality > 50)
+    		item.quality = 50;
+    	
+    	if(item.quality < 0)
+    		item.quality = 0;
+    	
+    	item.sellIn--;
+	}
+
+	private void applyBackStagesRules(Item item) {
 		if(item.sellIn > 10)
 			item.quality++;
 		else {
