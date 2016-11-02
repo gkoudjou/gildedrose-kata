@@ -2,7 +2,7 @@ package net.gtemgoua.kata.gildedrose.rules;
 
 import net.gtemgoua.kata.gildedrose.domain.Item;
 
-public class AgedBrieItemRule implements ItemRule {
+public class AgedBrieItemRule extends ItemRule {
 
 	public void apply(Item item) {
     	if(item.sellIn <= 0)
@@ -10,9 +10,7 @@ public class AgedBrieItemRule implements ItemRule {
     	else
     		item.quality++;
     	
-    	if( item.quality > 50)
-    		item.quality = 50;
-    	
+    	this.qualityBoundaryControl(item);
     	item.sellIn--;
 	}
 
