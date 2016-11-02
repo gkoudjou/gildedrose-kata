@@ -15,23 +15,22 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0; i < items.length; i++) {
-        	if (items[i].name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-        		applySulfurasRules(items[i]);
+    	for (Item item : items) {
+    		if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+        		applySulfurasRules(item);
         	}
-        	else if (items[i].name.equals(AGED_BRIE)) {
-        		applyAgedBrieRules(items[i]);
+        	else if (item.name.equals(AGED_BRIE)) {
+        		applyAgedBrieRules(item);
         	}
-        	else if (items[i].name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80ETC_CONCERT)) {
-        		applyBackStagesRules(items[i]);
+        	else if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80ETC_CONCERT)) {
+        		applyBackStagesRules(item);
         	}
-        	else if (items[i].name.equals(CONJURED)) {
-        		applyConjuredRules(items[i]);
+        	else if (item.name.equals(CONJURED)) {
+        		applyConjuredRules(item);
         	}
         	else
-        		applyNormalRules(items[i]);
-        
-        }
+        		applyNormalRules(item);
+		}
     }
     
     private void applyConjuredRules(Item item) {
