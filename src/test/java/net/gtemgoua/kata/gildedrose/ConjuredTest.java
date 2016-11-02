@@ -15,7 +15,7 @@ public class ConjuredTest {
 	
 	@Before
 	public void setUp() {
-		conjured = new Item("Conjured", 5, 10); 
+		conjured = new Item(GildedRose.CONJURED, 5, 10); 
 		items = new Item[] {
 				conjured
 		};
@@ -31,7 +31,7 @@ public class ConjuredTest {
 		application.updateQuality();
 		
 		assertThat(conjured.quality).as("Quality").isEqualTo(48).as("The quality decreased twice as fast as normal item. So 50 - 2 = 48");
-		assertThat(conjured.quality).as("SellIn").isEqualTo(9);
+		assertThat(conjured.sellIn).as("SellIn").isEqualTo(9);
 	}
 	
 	@Test
@@ -58,8 +58,8 @@ public class ConjuredTest {
 	
 	@Test
 	public void thatOneDayOldConjured_ShouldResultInQualityDecreasedBy_four_WhenSellDateHasPassed() {
-		conjured.sellIn = 10;
-		conjured.quality = -1;
+		conjured.quality = 10;
+		conjured.sellIn = -1;
 		
 		application.updateQuality();
 		
