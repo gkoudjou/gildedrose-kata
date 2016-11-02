@@ -7,6 +7,12 @@ import org.junit.Test;
 
 import net.gtemgoua.kata.gildedrose.GildedRose;
 import net.gtemgoua.kata.gildedrose.domain.Item;
+import net.gtemgoua.kata.gildedrose.rules.AgedBrieItemRule;
+import net.gtemgoua.kata.gildedrose.rules.BackStageItemRule;
+import net.gtemgoua.kata.gildedrose.rules.ConjuredItemRule;
+import net.gtemgoua.kata.gildedrose.rules.ItemRulesFactory;
+import net.gtemgoua.kata.gildedrose.rules.NormalItemRule;
+import net.gtemgoua.kata.gildedrose.rules.SulfurasItemRule;
 
 public class ItemRulesFactoryTest {
 	
