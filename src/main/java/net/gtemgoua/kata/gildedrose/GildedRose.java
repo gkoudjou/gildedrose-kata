@@ -21,13 +21,34 @@ class GildedRose {
         	else if (items[i].name.equals(AGED_BRIE)) {
         		applyAgedBrieRules(items[i]);
         	}
+        	else if (items[i].name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80ETC_CONCERT)) {
+        		applyBackStagesRules(items[i]);
+        	}
         	else
         		old_updateQuality(items[i]);
         
         }
     }
     
-    private void applyAgedBrieRules(Item item) {
+    private void applyBackStagesRules(Item item) {
+		if(item.sellIn > 10)
+			item.quality++;
+		else {
+			if(item.sellIn == 0)
+				item.quality = 0;
+			else if(item.sellIn <= 5)
+				item.quality += 3;
+			else if(item.sellIn > 5)
+				item.quality += 2;
+		}
+    	
+    	if( item.quality > 50)
+    		item.quality = 50;
+    	
+    	item.sellIn--;
+	}
+
+	private void applyAgedBrieRules(Item item) {
     	if(item.sellIn <= 0)
     		item.quality += 2;
     	else
