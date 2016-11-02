@@ -5,14 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-import net.gtemgoua.kata.gildedrose.GildedRose;
+import net.gtemgoua.kata.gildedrose.Constants;
 import net.gtemgoua.kata.gildedrose.domain.Item;
-import net.gtemgoua.kata.gildedrose.rules.AgedBrieItemRule;
-import net.gtemgoua.kata.gildedrose.rules.BackStageItemRule;
-import net.gtemgoua.kata.gildedrose.rules.ConjuredItemRule;
-import net.gtemgoua.kata.gildedrose.rules.ItemRulesFactory;
-import net.gtemgoua.kata.gildedrose.rules.NormalItemRule;
-import net.gtemgoua.kata.gildedrose.rules.SulfurasItemRule;
 
 public class ItemRulesFactoryTest {
 	
@@ -26,10 +20,10 @@ public class ItemRulesFactoryTest {
 	public void setUp() {
 		
 		normalItem = new Item("WhatEverNameHereIsNorma", 5, 10);
-		conjuredItem = new Item(GildedRose.CONJURED, 5, 10);
-		sulfurasItem = new Item(GildedRose.SULFURAS_HAND_OF_RAGNAROS, 5, 10);
-		backStageItem = new Item(GildedRose.BACKSTAGE_PASSES_TO_A_TAFKAL80ETC_CONCERT, 5, 10);
-		agedBrieItem = new Item(GildedRose.AGED_BRIE, 5, 10);
+		conjuredItem = new Item(Constants.CONJURED, 5, 10);
+		sulfurasItem = new Item(Constants.SULFURAS_HAND_OF_RAGNAROS, 5, 10);
+		backStageItem = new Item(Constants.BACKSTAGE_PASSES_TO_A_TAFKAL80ETC_CONCERT, 5, 10);
+		agedBrieItem = new Item(Constants.AGED_BRIE, 5, 10);
 		
 	}
 

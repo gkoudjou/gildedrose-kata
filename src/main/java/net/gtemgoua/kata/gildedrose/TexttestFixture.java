@@ -1,5 +1,7 @@
 package net.gtemgoua.kata.gildedrose;
 
+import net.gtemgoua.kata.gildedrose.domain.Item;
+
 public class TexttestFixture {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
