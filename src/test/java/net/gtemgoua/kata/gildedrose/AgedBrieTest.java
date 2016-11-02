@@ -2,9 +2,6 @@ package net.gtemgoua.kata.gildedrose;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,7 +16,6 @@ public class AgedBrieTest {
 	
 	@Before
 	public void setUp() {
-		
 		agedBrie = new Item(GildedRose.AGED_BRIE, 5, 10); 
 		items = new Item[] {
 				agedBrie
@@ -30,7 +26,6 @@ public class AgedBrieTest {
 	
 	@Test
 	public void thatOneDayOldBrie_ShouldResultInQualityIncreasedAndSellingDecrementsBy_One() {
-
 		application.updateQuality();
 		
 		assertThat(agedBrie.quality).as("Quality of one day old Aged Brie").isEqualTo(11);
@@ -39,7 +34,6 @@ public class AgedBrieTest {
 	
 	@Test
 	public void thatTwoDaysOldBrie_ShouldResultInQualityIncreasedAndSellingDecrementsBy_two() {
-
 		application.updateQuality();
 		application.updateQuality();
 		
@@ -49,7 +43,6 @@ public class AgedBrieTest {
 	
 	@Test
 	public void thatXDaysOldBrie_ShouldResultInQualityIncreasedAndSellingDecrementsBy_X() {
-
 		int x = RandomIntegerGenerator.randomInt(agedBrie.sellIn);
 		int initialSellInValue = agedBrie.sellIn;
 		int initialQualityValue = agedBrie.quality;
@@ -63,13 +56,22 @@ public class AgedBrieTest {
 	
 	@Test
 	public void thatWhenSellDateHasPassed_ShouldResultInQualityIncreasesTwiceAsFast() {
-		
 		agedBrie.sellIn = -1;
 		
 		application.updateQuality();
 		
 		assertThat(agedBrie.quality).as("Quality of one days old Aged Brie when Sell date has passed").isEqualTo(12);
 		assertThat(agedBrie.sellIn).as("SellIn").isEqualTo(-2);
+	}
+	
+	@Test
+	public void thatQuantityCanNotExceedFifty() {
+		agedBrie.quality = 50;
+		agedBrie.sellIn = 10;
+		
+		application.updateQuality();
+		
+		assertThat(agedBrie.quality).as("Quality").isEqualTo(50);
 	}
 
 }

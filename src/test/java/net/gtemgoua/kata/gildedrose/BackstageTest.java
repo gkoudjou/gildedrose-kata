@@ -81,6 +81,16 @@ public class BackstageTest {
 		
 		assertThat(backstage.quality).as("Quality when sell date has passed").isEqualTo(0);
 		assertThat(backstage.sellIn).as("SellIn when sell date has passed").isEqualTo(-1);
-	}		
+	}
+	
+	@Test
+	public void thatQuantityCanNotExceedFifty() {
+		backstage.quality = 50;
+		backstage.sellIn = 10;
+		
+		application.updateQuality();
+		
+		assertThat(backstage.quality).as("Quality").isEqualTo(50);
+	}	
 
 }
