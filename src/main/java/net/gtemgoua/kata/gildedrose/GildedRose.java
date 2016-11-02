@@ -12,7 +12,7 @@ public class GildedRose {
 
     public void updateQuality() {
     	for (Item item : items) {
-    		ItemRulesFactory.createFor(item).apply(item);
+    		ItemRulesFactory.updateQualityFor(item);
 		}
     }
 }

@@ -32,4 +32,8 @@ public class ItemRulesFactory {
 		
 		return rule;
 	}
+	
+	public static void updateQualityFor(Item item) {
+		createFor(item).apply(item);
+	}
 }
