@@ -1,6 +1,6 @@
-package com.gildedrose;
+package net.gtemgoua.kata.gildedrose;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 

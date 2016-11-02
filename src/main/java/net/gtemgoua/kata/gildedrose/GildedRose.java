@@ -1,4 +1,4 @@
-package com.gildedrose;
+package net.gtemgoua.kata.gildedrose;
 
 class GildedRose {
     Item[] items;

@@ -1,4 +1,4 @@
-package com.gildedrose;
+package net.gtemgoua.kata.gildedrose;
 
 public class Item {
 
