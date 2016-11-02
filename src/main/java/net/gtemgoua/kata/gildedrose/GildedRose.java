@@ -18,13 +18,25 @@ class GildedRose {
         	if (items[i].name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
         		applySulfurasRules(items[i]);
         	}
+        	else if (items[i].name.equals(AGED_BRIE)) {
+        		applyAgedBrieRules(items[i]);
+        	}
         	else
         		old_updateQuality(items[i]);
         
         }
     }
     
-    private void applySulfurasRules(Item item) {
+    private void applyAgedBrieRules(Item item) {
+    	if(item.sellIn < 0)
+    		item.quality += 2;
+    	else
+    		item.quality++;
+    	
+    	item.sellIn--;
+	}
+
+	private void applySulfurasRules(Item item) {
 		//NOTHING TODO. item is unchanged
 	}
 
